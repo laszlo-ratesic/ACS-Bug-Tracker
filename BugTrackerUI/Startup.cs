@@ -28,6 +28,8 @@ namespace BugTrackerUI
         {
             services.AddRazorPages();
             services.AddServerSideBlazor();
+            // Registers the service for dependency injection
+            services.AddSingleton<IBugService, BugService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
