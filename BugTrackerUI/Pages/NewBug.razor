@@ -11,8 +11,13 @@
 </EditForm>
 
 @code {
+    // Inject attribute ensures instance is provided by dependency resolver
     [Inject]
     public IBugService BugService { get; set; }
 
     public Bug AddBug { get; set; } = new Bug();
+
+    protected void HandleValidSubmit() {
+        BugService.AddBug(AddBug);
+    }
 }
