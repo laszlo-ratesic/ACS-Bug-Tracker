@@ -11,5 +11,8 @@
 </EditForm>
 
 @code {
+    [Inject]
+    public IBugService BugService { get; set; }
+
     public Bug AddBug { get; set; } = new Bug();
 }
